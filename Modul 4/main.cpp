@@ -1,11 +1,12 @@
 #include "playlist.h"
+#include "playlist.cpp"
 #include <iostream>
 #include <limits>
 
 using namespace std;
 
 void displayMainMenu() {
-    cout << "\n=== MANAJEMEN PLAYLIST LAGU ===\n";
+    cout << "\n      BAOKTIFY      \n";
     cout << "1. Tambah Lagu\n";
     cout << "2. Hapus Lagu Berdasarkan Judul\n";
     cout << "3. Tampilkan Seluruh Lagu\n";
@@ -14,7 +15,7 @@ void displayMainMenu() {
 }
 
 void displayAddSongMenu() {
-    cout << "\n=== PILIHAN TAMBAH LAGU ===\n";
+    cout << "\n-- TAMBAH LAGU --\n";
     cout << "1. Tambah di Awal Playlist\n";
     cout << "2. Tambah di Akhir Playlist\n";
     cout << "3. Tambah Setelah Lagu ke-3\n";

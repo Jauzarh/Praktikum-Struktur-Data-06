@@ -1,4 +1,5 @@
 #include "kendaraan.h"
+#include "kendaraan.cpp"
 #include <iostream>
 #include <limits>
 

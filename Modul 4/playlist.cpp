@@ -4,11 +4,9 @@
 
 using namespace std;
 
-// Implementasi kelas Song
 Song::Song(string t, string a, float d) 
     : title(t), artist(a), duration(d), next(nullptr) {}
 
-// Implementasi kelas Playlist
 Playlist::Playlist() : head(nullptr), count(0) {}
 
 Playlist::~Playlist() {
@@ -50,8 +48,7 @@ void Playlist::addAfterThird(string title, string artist, float duration) {
 
     Song* newSong = new Song(title, artist, duration);
     Song* current = head;
-    
-    // Mencari lagu ketiga
+
     for (int i = 1; i < 3; i++) {
         current = current->next;
     }
@@ -71,7 +68,6 @@ bool Playlist::removeByTitle(string title) {
     Song* current = head;
     Song* previous = nullptr;
 
-    // Jika head yang akan dihapus
     if (current != nullptr && current->title == title) {
         head = current->next;
         cout << "Lagu \"" << current->title << "\" berhasil dihapus.\n";
@@ -80,7 +76,6 @@ bool Playlist::removeByTitle(string title) {
         return true;
     }
 
-    // Mencari lagu dengan judul yang sesuai
     while (current != nullptr && current->title != title) {
         previous = current;
         current = current->next;
@@ -91,7 +86,6 @@ bool Playlist::removeByTitle(string title) {
         return false;
     }
 
-    // Menghapus node
     previous->next = current->next;
     cout << "Lagu \"" << current->title << "\" berhasil dihapus.\n";
     delete current;

@@ -31,13 +31,32 @@ void printInfo(Stack s) {
 }
 
 void balikStack(Stack &s) {
-    int i = 0;
-    int j = s.top;
+    int i = 0, j = s.top;
     while (i < j) {
         infotype temp = s.info[i];
         s.info[i] = s.info[j];
         s.info[j] = temp;
-        i++;
-        j--;
+        i++; j--;
+    }
+}
+
+
+void pushAscending(Stack &s, infotype x) {
+    if (s.top == -1) {
+        push(s, x);
+        return;
+    }
+
+    Stack temp;
+    CreateStack(temp);
+
+    while (s.top != -1 && s.info[s.top] > x) {
+        push(temp, pop(s));
+    }
+
+    push(s, x);
+
+    while (temp.top != -1) {
+        push(s, pop(temp));
     }
 }
